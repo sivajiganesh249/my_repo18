@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+     {%block body_block%}
+       <h1>Probability of prediction in ipl2021 matches</h1>  <hr><hr>
+       <table border='2'>
+         <thead>
+           <th>DATE</th>
+           <th>MATCH</th>
+           <th>TIME</th>
+           <th>VENUE</th>
+           <th>MY PREDICTION OF WIN</th>
+           <th>Actions</th>
+         </thead>
+         {% for match in matches %}
+         <tr>
+           <td>{{match.mdate}}</td>
+           <td>{{match.mmatch}}</td>
+           <td>{{match.mtime}}</td>
+           <td>{{match.mvenue}}</td>
+           <td>{{match.mmypred}}</td>
+           <td> <a href="/update/{{match.id}}">Update</a> <a href="/delete/{{match.id}}">Delete</a></td>
+         </tr>
+         {%endfor%}
+       </table><br><br>
+       <a href="/create" class ='btn btn-success btn-lg'>Insert New Match</a>
+      {%endblock%}

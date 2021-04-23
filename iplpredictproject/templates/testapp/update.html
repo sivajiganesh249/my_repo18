@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+     {%block body_block%}
+       <h1>Player Information Update Form</h1><hr>
+       <form method="post">
+         {%csrf_token%}
+         DATE:<input type="text" name="mdate" value="{{matche.mdate}}"><br>
+         MATCH:<input type="text" name="mmatch" value="{{matche.mmatch}}"><br>
+         TIME:<input type="text" name="mtime" value="{{matche.mtime}}"><br>
+         VENUE:<input type="text" name="mvenue" value="{{matche.mvenue}}"><br>
+         MY PREDICTION OF WIN:<input type="text" name="mmypred" value="{{matche.mmypred}}"><br><br><br>
+         <input type="SUBMIT" class='btn btn-success' value="Update Record">
+       </form>
+
+      {%endblock%}
